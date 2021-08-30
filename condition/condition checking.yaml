@@ -1,0 +1,22 @@
+-
+    name: 'Am I an Adult or a Child?'
+    hosts: localhost
+    vars:
+        age: 17
+    tasks:
+        -
+            command: 'echo "I am a Child"'
+            register: output
+            when: '{{ age }} < 18'
+        -
+           debug:
+                var: output
+
+        -
+            command: 'echo "I am an Adult"'
+            register: output
+            when: '{{ age }} >= 18'
+
+        -
+           debug:
+                var: output

@@ -1,0 +1,9 @@
+-
+  hosts: all
+  tasks:
+    -
+      name: "installation of httpd if os is redhat"
+      yum:
+        name: httpd
+        state: installed
+      when: ansible_os_family==Redhat

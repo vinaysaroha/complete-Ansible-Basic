@@ -1,0 +1,29 @@
+-
+  hosts: all
+  tasks:
+    - name: checking httpd is installed or not
+      yum:
+        name: httpd
+        state: installed
+    -
+      name: reserving the output of service
+      command: systemctl is-active httpd
+      register: output
+      ignore_errors: yes # if service is down than ansible consider as error to display it in output that we have to use it
+
+    -
+      name: checking service is up or not
+      debug:
+        var: output
+    -
+      name: start if service is stop
+      service:
+        name: httpd
+        state: started
+
+    -
+      name: restarting service if service is already up
+      service:
+        name: httpd
+        state: restart
+      when: output.stdout_lines != "active"
