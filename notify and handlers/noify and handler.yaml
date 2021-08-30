@@ -1,0 +1,33 @@
+-
+  hosts: all
+  tasks:
+    -
+      name: checking notify and handler
+      copy:
+        src: check.txt
+        dest: /opt
+      notify: restart_httpd
+
+# agar check.txt file /opt me gye or usne kuch change kiya wha ja kr to handler chalega
+# uske liye notify kr diya hai
+# multiple handler ho sakte hai ek notify  ke
+    - pause:
+        minutes: 5 #to pause a playbook for a certain time
+
+    -
+      name: installation of httpd service
+      yum:
+        name: httpd
+        state: installed
+    -
+      name: starting service of httpd service
+      service:
+        name: httpd
+        state: started
+# handler is not a task that's why it is coming in indent of task
+  handlers:
+    -
+      name: restart_httpd
+      service:
+        name: httpd
+        state: restarted
