@@ -1,0 +1,32 @@
+# rpm -qa crpyto* ---> package used for encryption
+# run a command to create a file of vault password
+# ansible-vault create file_name # to create a file with password
+# ansible-vault rekey file_name # to reset the password
+# ansible-vault decrypt pass.yaml # to decrypt
+#ansible-vault encrypt pass.yaml # to encrypt
+-
+  hosts: all
+  vars:
+      mypass: redhat
+  tasks:
+    -
+      name: "adding new user"
+      user:
+        name: viku
+        password: "{{ mypass }}"
+# now encrypt the file
+#ansible-vault encrypt vault.yaml
+#now run ansible-playbook vault.yaml --ask-vault-pass
+
+-
+  hosts: all
+  vars_files:
+      /root/pass.yaml
+  tasks:
+    -
+      user:
+        name: viku
+        password: "{{ mypass }}"
+
+# create a file at same location /root/pass.yaml and encrypt it that contain below info
+mypass: redhat
