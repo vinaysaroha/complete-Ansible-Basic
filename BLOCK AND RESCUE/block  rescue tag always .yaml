@@ -1,0 +1,34 @@
+-
+  hosts: all
+  tasks:
+# agar block ke under ka ek bhi task failed hua then he will start rescue part otherwise he will skip rescue part
+    -
+      block:
+        -
+          name: task1
+          file:
+            path: /tmp/sample.csv
+            state: touch
+
+        -
+          name: task2
+          file:
+            path: /opt/sample.txt
+          tags: myfav
+          #
+#ansible-playbook block_rescue.yaml  --tags=myfav (to run a single tag)
+#ansible-playbook block_rescue.yaml  --skip-tags=myfav (to skip myfav tag and run all other task)
+
+      rescue:
+        -
+          name: print msg
+          debug:
+            msg: "block failed"
+# msg is to print the msg
+# this always task run whether you block fail or pass whether you rescue part run or not but always always run
+      always:
+        -
+          name: restarting the apache service
+          service:
+            name: httpd
+            state: restarted

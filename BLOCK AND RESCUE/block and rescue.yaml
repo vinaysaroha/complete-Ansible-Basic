@@ -1,0 +1,28 @@
+-
+  hosts: all
+  tasks:
+# agar block ke under ka ek bhi task failed hua then he will start rescue part otherwise he will skip rescue part
+    -
+      block:
+        -
+          name: task1
+          file:
+            path: /tmp/sample.csv
+            state: touch
+
+        -
+          name: task2
+          file:
+            path: /opt/sample.txt
+
+        -
+          name: checking service
+          service:
+            name: neutron
+            state: started
+
+      rescue:
+        -
+          name: print msg
+          debug:
+            msg: "block failed"  # msg is to print the msg
