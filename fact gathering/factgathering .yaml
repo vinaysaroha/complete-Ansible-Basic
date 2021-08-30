@@ -1,0 +1,18 @@
+# this playbook is to gather facts and put it in a file ,
+# first identify the which fact gather you want to use
+# use "ansible all -m setup" command get exact detail of fact gather than use that in ansible playbook
+-
+  hosts: all
+  vars:
+    name: facts
+  tasks:
+    -
+      name: 'store kernel version into /tmp/{{ name }}'
+      file:
+        name: '/tmp/{{ name }}'
+        state: touch
+    -
+      name: 'copy data to {{ name }} file'
+      copy:
+        content: "this is kernel version {{ ansible_kernel }}"
+        dest: '/tmp/{{ name }}'
