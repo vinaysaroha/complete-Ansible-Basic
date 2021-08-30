@@ -1,0 +1,13 @@
+# used to send multiple file to multiple folder but only single time 1 file in 1 folder
+-
+  hosts: all
+  tasks:
+    -
+      copy:
+        src: "{{ item.file }}"
+        dest: "{{ item.dir }}"
+      with_items:
+        - { file: '/etc/passwd', dir: '/opt'}
+        - { file: '/etc/shadow', dir: '/tmp'}
+        - { file: '/etc/group', dir: '/opt'}
+        - { file: '/etc/gshadow', dir: '/tmp'}

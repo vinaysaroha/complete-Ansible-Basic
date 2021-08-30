@@ -1,0 +1,24 @@
+-
+  hosts: all
+  tasks:
+    -
+      user:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - rahul
+        - vinit
+        - varsha
+
+-
+  hosts: all
+  tasks:
+    -
+      user:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - rahul
+        - vinit
+        - varsha
+

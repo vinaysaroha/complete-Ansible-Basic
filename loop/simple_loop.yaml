@@ -1,0 +1,12 @@
+-
+  hosts: all
+  vars_files:
+    - /root/user_list.yaml
+  tasks:
+    -
+      name: creating new users
+      user:
+        name: {{ item }}
+        state: present
+      with_items:
+        - "{{ myuser }}"

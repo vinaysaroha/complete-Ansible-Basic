@@ -1,0 +1,14 @@
+-
+    name: 'Print list of fruits'
+    hosts: all
+    tasks:
+        -
+            file:
+                path: '/tmp/{{ item }}'
+                state: touch
+                mode: '0755'
+            loop:
+              - Apple
+              - Banana
+              - Grapes
+              - Orange

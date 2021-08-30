@@ -1,0 +1,17 @@
+-
+  hosts: all
+  vars:
+    myfiles:
+      - /etc/hosts
+      - /etc/rc.local
+    mydirs:
+      - /tmp
+      - /opt
+  tasks:
+    -
+      copy:
+        src: "{{ item[0] }}"
+        dest: "{{ item[1] }}"
+      with_nested:
+        - "{{ myfiles }}"
+        - "{{ mydirs }}"

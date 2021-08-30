@@ -1,0 +1,11 @@
+-
+  hosts: all
+  tasks:
+    -
+      yum:
+        name: {{ item }}
+        state: present
+      loop:
+        - httpd
+        - nginx
+        - telnet
