@@ -1,0 +1,11 @@
+-
+  name: defining variable in yaml
+  hosts: all
+  vars:
+    nameserver: 192.168.0.10
+  tasks:
+    -
+      name: checking the variable
+      lineinfile:
+        path: /tmp/sample.txt
+        line: 'nameserver {{ nameserver }}'

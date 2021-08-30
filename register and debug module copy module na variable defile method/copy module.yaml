@@ -1,0 +1,25 @@
+-
+  name: testing copy module
+  hosts: all
+  tasks:
+    -
+      name: checking ping
+      ping:
+      register: output
+
+    -
+      debug:
+        var: output
+
+    -
+      name: Copy data sample file to manage node
+      copy:
+        src: /tmp/sample.txt
+        dest: /tmp/sample.txt
+        backup: yes
+
+    -
+      name: copy a direcory
+      copy:
+        src: /tmp/a
+        dest: /tmp/a

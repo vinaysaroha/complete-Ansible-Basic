@@ -1,0 +1,10 @@
+-
+  name: testing connectivity
+  hosts: all
+  tasks:
+    - name: checking server connectivity with ping test
+      ping:
+      register: result
+
+    - debug:
+        var: result
