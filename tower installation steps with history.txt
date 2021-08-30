@@ -1,0 +1,246 @@
+    1  cat /etc/redhat-release
+    2  yum install vim wget -y
+    3  yum update
+    4  vim /etc/selinux/config
+    5  setenforce 0
+    6  systemctl stop firewalld
+    7  systemctl disabled firewalld
+    8  systemctl disable firewalld
+    9  yum -y install epel-release
+   10  yum -y install git gcc gcc-c++ ansible nodejs gettext device-mapper-persistent-data lvm2 bzip2 python3-pip python-docker wget
+   11  yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+   12  yum clean all
+   13  yum repolist
+   14  yum install docker
+   15  systemctl start docker
+   16  systemctl enable docker
+   17  systemctl status docker
+   18  alternatives --set python /usr/bin/python3
+   19  yum install -y python3
+   20  pip3 install setuptools_rust
+   21  pip3 install wheel
+   22  pip3 install docker-compose
+   23  pip3 install snips-nlu
+   24  pip3 install docker-compose
+   25  pip3 install setuptools_rust
+   26  pip3 install wheel
+   27  pip3 install docker-compose
+   28  pip install setuptools-rust
+   29  pip3 install setuptools-rust
+   30  pip3 uninstall setuptools-rust
+   31  pip3 install docker-compose
+   32  yum install rust-toolset-1.41
+   33  yum install rust-toolset
+   34  yum install rust
+   35  pip3 install setuptools-rust
+   36  pip3 install docker-compose
+   37  which cargo
+   38  l.
+   39  pip3 --upgrade pip3
+   40  pip3 -upgrade pip3
+   41  pip3 upgrade pip3
+   42  pip3 install --upgrade pip3
+   43  pip3 install --upgrade pip
+   44  pip3 install docker-compose
+   45  git clone https://github.com/ansible/awx.git
+   46  ls
+   47  cd awx/
+   48  ls
+   49  git clone https://github.com/ansible/awx-logos.git
+   50  ls
+   51  ls
+   52  cd /var/lib/awx/
+   53  ls
+   54  cd p
+   55  ls
+   56  cd projects/
+   57  ls
+   58  mv /root/helloworld.yaml .
+   59  ls
+   60  mkdir vinay
+   61  mv helloworld.yaml vinay/
+   62  ls
+   63  ll /var/lib/awx/projects/
+   64  ls
+   65  pwd
+   66  cd /var/lib/
+   67  ls
+   68  cd awx/
+   69  ls
+   70  cd projects/
+   71  ls
+   72  cd ~
+   73  ls
+   74  rm -rf awx
+   75  cd ~
+   76  git clone -b 17.1.0 https://github.com/ansible/awx.git
+   77  ls
+   78  cd awx/
+   79  ls
+   80  cd
+   81  openssl rand -base64 30
+   82  ls
+   83  vim awx/installer/inventory
+   84  ansible-playbook -i ~/awx/installer/inventory ~/awx/installer/install.yml -v
+   85  cd awx/
+   86  ls
+   87  cd installer/
+   88  ls
+   89  vim install.yml
+   90  ansible-playbook -i ~/awx/installer/inventory ~/awx/installer/install.yml -v
+   91  pip3 install selinux
+   92  ansible-playbook -i ~/awx/installer/inventory ~/awx/installer/install.yml -v
+   93  curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   94  cd /usr/local/bin/
+   95  ls
+   96  ll
+   97  ln -s /usr/bin/docker-compose docker-compose
+   98  ln -s docker-compose /usr/bin/docker-compose
+   99  ll
+  100  ll /usr/bin/docker-compose
+  101  unlink /usr/bin/docker-compose
+  102  ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  103  ll /usr/bin/docker-compose
+  104  ansible-playbook -i ~/awx/installer/inventory ~/awx/installer/install.yml -v
+  105  docker ps
+  106  ping 172.31.12.130
+  107  ssh 172.31.12.130
+  108  l.
+  109  cd
+  110  l.
+  111  cd .ssh/
+  112  ls
+  113  cd
+  114  ssh-keygen
+  115  ssh 172.31.12.130
+  116  ssh-copy-id -i .ssh/id_rsa.pub root@172.31.12.130
+  117  ssh 172.31.12.130
+  118  ls
+  119  docker ps
+  120  cd /var/lib/
+  121  ls
+  122  cd awx/
+  123  ls
+  124  cd awxcompose/
+  125  ls
+  126  cd
+  127  cd -
+  128  ls
+  129  cd ..
+  130  ls
+  131  cd projects/
+  132  ls
+  133  l.
+  134  cd ..
+  135  ls
+  136  cd pgdocker/
+  137  ls
+  138  cd 12/
+  139  ls
+  140  cd data/
+  141  ls
+  142  cd ..
+  143  ls
+  144  cd ..
+  145  ls
+  146  cd ..
+  147  ls
+  148  cd ..
+  149  ls
+  150  cd
+  151  vim /etc/ansible/hosts
+  152  vim helloworld.yaml
+  153  vim helloworld.yaml
+  154  l.
+  155  rm -rf .helloworld.yaml.swp
+  156  vim helloworld.yaml
+  157  ansible-playbook --syntax-check helloworld.yaml
+  158  vim inventory
+  159  ansible-playbook helloworld.yaml -i inventory
+  160  vim /etc/ansible/hosts
+  161  ls
+  162  cd /var/lib/awx/projects/vinay/
+  163  ls
+  164  vim helloworld.yaml
+  165  docker ps
+  166  docker ps -a
+  167  docker start awx_task awx_web awx_redis awx_postgres
+  168  docker restart awx_postgres
+  169  systemctl status docker
+  170  systemctl restart docker
+  171  systemctl status docker
+  172  docker restart awx_postgres
+  173  ll /var/lib/docker/overlay2/10cae48f1a153b3e43a0efde7cd93566c185e9ce42f875deee5fc55b4a86bb0d/merged
+  174  ls
+  175  cd awx/
+  176  ls
+  177  ansible-playbook -i ~/awx/installer/inventory ~/awx/installer/install.yml -v
+  178  docker ps
+  179  docker ps -a
+  180  cd
+  181  cd /var/lib/awx/
+  182  ls
+  183  cd projects/
+  184  ls
+  185  mkdir playrepo
+  186  ls
+  187  cd playrepo/
+  188  ls
+  189  vim copycontent.yaml
+  190  ansible-playbook --syntax-check copycontent.yaml
+  191  ping 172.31.12.130
+  192  ssh 172.31.12.130
+  193  ls
+  194  vim copycontent.yaml
+  195  ls
+  196  cd /opt/
+  197  ls
+  198  cd /tmp/
+  199  ls
+  200  cd
+  201  cd /var/lib/docker/
+  202  ls
+  203  cd
+  204  ssh 172.31.12.130
+  205  cd /var/lib/awx/
+  206  ls
+  207  cd p
+  208  ls
+  209  cd projects/
+  210  ls
+  211  cd playrepo/
+  212  ls
+  213  vim copycontent.yaml
+  214  ls
+  215  vim httpd.yaml
+  216  ansible-doc yum
+  217  !
+  218  vim httpd.yaml
+  219  ansible-doc service
+  220  vim httpd.yaml
+  221  ansible-playbook --syntax-check httpd.yaml
+  222  yum install httpd
+  223  vim httpd.yaml
+  224  ssh 172.31.12.130
+  225  vim httpd.yaml
+  226  yum clean all
+  227  yum httpd
+  228  yum install httpd
+  229  vim httpd.yaml
+  230  cd /tmp/
+  231  ls
+  232  cd /var/lib/awx/
+  233  ls
+  234  cd projects/
+  235  ls
+  236  cd playrepo/
+  237  ls
+  238  vim httpd.yaml
+  239  cd /tmp/
+  240  ls
+  241  cd -
+  242  ls
+  243  vim copycontent.yaml
+  244  ll /tmp/resolve.conf
+  245  ssh 172.31.12.130
+  246  ssh 172.31.12.130
