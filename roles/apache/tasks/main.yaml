@@ -1,0 +1,24 @@
+-
+  name: "install apache server"
+  yum:
+    name: "{{ web_service }}"
+    state: present
+
+-
+  include_vars: DocumentRoot.yaml # if it comes into a folder than it will come under folder_name/DocumentRoot.yaml
+-
+  name: "copy website data into {{ DocumentRoot }}"
+  copy:
+    src: index.html
+    dest: "{{ DocumentRoot }}"
+
+-
+  name: 'copy web.conf.j2 into "{{ web_conf }}"'
+  template:
+    src: web.conf.j2
+    dest: "{{ web_server_conf_file }}"
+  notify: restart_apache
+
+-
+  name: "importing ping task"
+  import_tasks: pinging.yaml
