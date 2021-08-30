@@ -1,0 +1,11 @@
+-
+  hosts: all
+  tasks:
+    -
+      name: push template file
+      #copy:  # if you use copy module then if will simple copy the content of the file to the server
+      #  src: motd.j2
+      #  dest: /etc/motd
+      template:
+        src: motd.j2
+        dest: /etc/motd
